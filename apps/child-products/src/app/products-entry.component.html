@@ -1,0 +1,12 @@
+<section>
+  <h2 tuiTitle>Products child app</h2>
+  <p>Total items: {{ count() }}</p>
+
+  <button type="button" tuiButton appearance="primary" (click)="addProduct()">
+    Add item
+  </button>
+
+  <ul>
+    <li *ngFor="let item of items()">{{ item }}</li>
+  </ul>
+</section>

@@ -1,0 +1,12 @@
+<header class="layout-header">
+  <h1>{{ title() }}</h1>
+  <nav class="layout-nav" aria-label="Host navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" tuiButton appearance="flat">Home</a>
+    <a routerLink="/products" routerLinkActive="active" tuiButton appearance="flat">Products child</a>
+    <a routerLink="/profile" routerLinkActive="active" tuiButton appearance="flat">Profile child</a>
+  </nav>
+</header>
+
+<section class="layout-content">
+  <router-outlet />
+</section>

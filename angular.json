@@ -1,0 +1,139 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "apps",
+  "projects": {
+    "host": {
+      "projectType": "application",
+      "root": "apps/host",
+      "sourceRoot": "apps/host/src",
+      "prefix": "demo-host",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/host",
+            "index": "apps/host/src/index.html",
+            "browser": "apps/host/src/main.ts",
+            "polyfills": ["apps/host/src/polyfills.ts"],
+            "tsConfig": "apps/host/tsconfig.app.json",
+            "styles": ["apps/host/src/styles.less"],
+            "assets": []
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "host:build:production"
+            },
+            "development": {
+              "buildTarget": "host:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "child-products": {
+      "projectType": "application",
+      "root": "apps/child-products",
+      "sourceRoot": "apps/child-products/src",
+      "prefix": "demo-products",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/child-products",
+            "index": "apps/child-products/src/index.html",
+            "browser": "apps/child-products/src/main.ts",
+            "polyfills": ["apps/child-products/src/polyfills.ts"],
+            "tsConfig": "apps/child-products/tsconfig.app.json",
+            "styles": ["apps/child-products/src/styles.less"],
+            "assets": []
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "child-products:build:production"
+            },
+            "development": {
+              "buildTarget": "child-products:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    },
+    "child-profile": {
+      "projectType": "application",
+      "root": "apps/child-profile",
+      "sourceRoot": "apps/child-profile/src",
+      "prefix": "demo-profile",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/child-profile",
+            "index": "apps/child-profile/src/index.html",
+            "browser": "apps/child-profile/src/main.ts",
+            "polyfills": ["apps/child-profile/src/polyfills.ts"],
+            "tsConfig": "apps/child-profile/tsconfig.app.json",
+            "styles": ["apps/child-profile/src/styles.less"],
+            "assets": []
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "child-profile:build:production"
+            },
+            "development": {
+              "buildTarget": "child-profile:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
